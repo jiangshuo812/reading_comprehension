@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>英语阅读题答题+批改界面</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- 左侧：阅读原文区域 -->
+        <div class="left-panel">
+            <div class="article-header">
+                <h2>阅读原文</h2>
+                <div class="question-info">
+                    <span class="question-number">201129</span>
+                    <span class="question-source">2011年英语（一）第29题</span>
+                </div>
+            </div>
+            <div class="article-content" id="articleContent">
+                <!-- 原文内容将通过JavaScript动态加载 -->
+            </div>
+        </div>
+
+        <!-- 右侧：问题/选项/解析区域 -->
+        <div class="right-panel">
+            <div class="question-container">
+                <!-- 问题卡片 -->
+                <div class="question-card" id="questionCard">
+                    <div class="question-header">
+                        <h3>问题</h3>
+                        <div class="question-type-tag">阅读题</div>
+                    </div>
+                    <div class="question-text" id="questionText">
+                        <!-- 问题文本将通过JavaScript动态加载 -->
+                    </div>
+                    
+                    <!-- 选项区域 -->
+                    <div class="options-container" id="optionsContainer">
+                        <!-- 选项将通过JavaScript动态加载 -->
+                    </div>
+
+                    <!-- 答题结果 -->
+                    <div class="answer-result" id="answerResult" style="display: none;">
+                        <div class="result-message"></div>
+                        <button class="show-analysis-btn" id="showAnalysisBtn">
+                            <i class="fas fa-eye"></i> 查看解析
+                        </button>
+                    </div>
+
+                    <!-- 解析区域 -->
+                    <div class="analysis-container" id="analysisContainer" style="display: none;">
+                        <div class="analysis-header">
+                            <h4>题目解析</h4>
+                            <div class="analysis-tags">
+                                <span class="tag knowledge-tag">细节题关键句定位</span>
+                                <span class="tag type-tag">细节题</span>
+                            </div>
+                        </div>
+                        
+                        <!-- 定位信息 -->
+                        <div class="locate-info">
+                            <div class="locate-item">
+                                <label>定位词：</label>
+                                <span id="locateWord"></span>
+                            </div>
+                            <div class="locate-item">
+                                <label>定位句：</label>
+                                <span id="locateSentence"></span>
+                            </div>
+                            <div class="locate-item">
+                                <label>关键句：</label>
+                                <span id="keySentence"></span>
+                            </div>
+                        </div>
+
+                        <!-- 翻译 -->
+                        <div class="translation-section">
+                            <h5>翻译</h5>
+                            <p id="translation"></p>
+                        </div>
+
+                        <!-- 解析内容 -->
+                        <div class="explanation-section">
+                            <h5>解析</h5>
+                            <p id="explanation"></p>
+                        </div>
+
+                        <!-- 干扰项分析 -->
+                        <div class="distractor-analysis" id="distractorAnalysis">
+                            <h5>干扰项分析</h5>
+                            <div class="distractor-items" id="distractorItems">
+                                <!-- 干扰项分析将通过JavaScript动态加载 -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 相似题按钮 -->
+                    <div class="similar-questions-section">
+                        <button class="similar-questions-btn" id="similarQuestionsBtn">
+                            <i class="fas fa-lightbulb"></i> 练习相似题
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 相似题模态框 -->
+    <div class="modal" id="similarModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>相似题练习</h3>
+                <button class="close-btn" id="closeModalBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="similar-question-container">
+                    <div class="similar-article">
+                        <h4>相似题原文段落</h4>
+                        <div id="similarArticleContent"></div>
+                    </div>
+                    <div class="similar-question">
+                        <h4>相似题目</h4>
+                        <div id="similarQuestionText"></div>
+                        <div class="similar-options" id="similarOptions"></div>
+                        <div class="similar-result" id="similarResult" style="display: none;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="return-btn" id="returnBtn">返回原题</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
